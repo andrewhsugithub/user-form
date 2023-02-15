@@ -25,9 +25,11 @@ const Form: FC<FormProps> = ({ addUser }) => {
       setErrorMessage("Please enter a valid age (non-empty values).");
       setHaveError(true);
     } else {
-      if (0 <= Number(age) && Number(age) <= 150)
+      if (0 <= Number(age) && Number(age) <= 150) {
         addUser({ id: uuidv4(), username: username, age: age });
-      else {
+        setUsername("");
+        setAge("");
+      } else {
         setErrorMessage("Please enter a valid age ( 0 <= age <= 150 ).");
         setHaveError(true);
       }
@@ -43,6 +45,7 @@ const Form: FC<FormProps> = ({ addUser }) => {
             className="form__input"
             type="text"
             onChange={(e) => setUsername(e.target.value)}
+            value={username}
           />
         </div>
         <div className="form__group">
@@ -51,6 +54,7 @@ const Form: FC<FormProps> = ({ addUser }) => {
             className="form__input"
             type="text"
             onChange={(e) => setAge(e.target.value)}
+            value={age}
           />
         </div>
         <button type="submit" className="form__button">
