@@ -11,7 +11,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <>
       <Form addUser={addUser} />
       {users.length > 0 && (
         <ul className="container listUser__container">
@@ -20,7 +20,7 @@ function App() {
           ))}
         </ul>
       )}
-    </div>
+    </>
   );
 }
 
