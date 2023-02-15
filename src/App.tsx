@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Form from "./components/form/Form";
+import ListUser from "./components/listUser/ListUser";
 
 function App() {
+  const [users, setUsers] = useState<RawUser[]>([]);
+
+  const addUser = (user: RawUser) => {
+    setUsers((prevState) => [...prevState, user]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form addUser={addUser} />
+      {users.length > 0 && (
+        <ul className="container listUser__container">
+          {users.map((user) => (
+            <ListUser key={user.id} username={user.username} age={user.age} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

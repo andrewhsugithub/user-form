@@ -1,0 +1,10 @@
+﻿.list-user__card {
+  border: 1px solid hsla(0, 1%, 19%, 0.774);
+  list-style: none;
+  padding: 0.25rem;
+}
+
+.list__user {
+  font-size: 16px;
+  font-weight: 500;
+}

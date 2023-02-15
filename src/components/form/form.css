@@ -1,0 +1,31 @@
+﻿.form__container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.form__label {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.form__input {
+  font-size: 18px;
+}
+
+.form__button {
+  background-color: purple;
+  color: white;
+  padding: 0.25rem;
+  font-weight: normal;
+  width: 25%;
+  font-size: 18px;
+  cursor: pointer;
+}
